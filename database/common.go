@@ -36,11 +36,11 @@ func DatabaseConnect() error {
 }
 
 func ConnectionString(keys models.SecretRDSJson) string {
-	var dbUser, authToken, dbEndpoint, dbName string
-	dbUser = keys.Username
-	authToken = keys.Password
-	dbEndpoint = keys.Host
-	dbName = "comercialbermudez"
+	var dbUser string = keys.Username
+	var authToken string = keys.Password
+	var dbEndpoint string = keys.Host
+	var dbName string = "comercialbermudez"
+
 	return fmt.Sprintf("%s:%s@tcp(%s)/%s?allowCleartextPasswords=true", dbUser, authToken, dbEndpoint, dbName)
 
 }

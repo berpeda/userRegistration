@@ -1,5 +1,6 @@
 package models
 
+// This is the SecretRDSJ model
 type SecretRDSJson struct {
 	Username            string `json:"username"`
 	Password            string `json:"password"`
@@ -7,9 +8,4 @@ type SecretRDSJson struct {
 	Host                string `json:"host"`
 	Port                int    `json:"port"`
 	DbClusterIdentifier string `json:"DbClusterIdentifier"`
-}
-
-type SignUp struct {
-	UserEmail string `json:"UserEmail"`
-	UserUUID  string `json:"UserUUID"`
 }

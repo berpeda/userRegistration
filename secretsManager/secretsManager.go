@@ -10,6 +10,7 @@ import (
 	"github.com/berpeda/userRegistration/models"
 )
 
+// This function gets a Secret from Secrets Manager and decode the information
 func GetSecrets(secretName string) (models.SecretRDSJson, error) {
 	var secretData models.SecretRDSJson
 	fmt.Println("Getting secret -> ", secretName)
