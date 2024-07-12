@@ -38,7 +38,7 @@ func handler(ctx context.Context, event events.CognitoEventUserPoolsPostConfirma
 	datos.UserEmail = userAttributes["email"]
 
 	// Prints the user's information
-	fmt.Println("The assigned UUID -> ", datos.UserEmail)
+	fmt.Println("The assigned UUID -> ", datos.UserUUID)
 	fmt.Println("The assigned email -> ", datos.UserEmail)
 	fmt.Println("The user email is verified -> ", userAttributes["email_verified"])
 

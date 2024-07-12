@@ -18,10 +18,7 @@ func SignUp(user models.SignUp) error {
 
 	defer Database.Close()
 
-	sentence := "INSERT INTO Usuarios (UUID_usuario, Email, Creado) VALUES ('" + user.UserUUID + "', '" + user.UserEmail + "', " + tools.DateMySQL() + ");"
-	fmt.Println(sentence)
-
-	_, err = Database.Exec(sentence)
+	_, err = Database.Exec(`INSERT INTO Usuarios (UUID_usuario, Email, Creado) VALUES (?, ?, ?)`, user.UserUUID, user.UserEmail, tools.DateMySQL())
 
 	if err != nil {
 		return err
